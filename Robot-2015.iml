@@ -5,8 +5,6 @@
     <varelement var="jar://$MODULE_DIR$/java/lib/WPILib-sources.jar!/" value="src:wpilib.sources" />
     <varelement var="jar://$MODULE_DIR$/java/lib/NetworkTables.jar!/" value="networktables" />
     <varelement var="jar://$MODULE_DIR$/java/lib/NetworkTables-sources.jar!/" value="src:networktables.sources" />
-    <varelement var="jar://$MODULE_DIR$/java/lib/WPILib-sources.jar!/" kind="src:" value="wpilib.sources" />
-    <varelement var="jar://$MODULE_DIR$/java/lib/NetworkTables-sources.jar!/" kind="src:" value="networktables.sources" />
     <src_description expected_position="0">
       <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />
     </src_description>
