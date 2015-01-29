@@ -20,6 +20,6 @@ public class SubsystemDrive extends Subsystem {
     }
 
     public void driveWithJoystick(Joystick stick) {
-        drive.arcadeDrive(stick);
+        drive.mecanumDrive_Cartesian(stick.getX(), stick.getY(), stick.getTwist(), 0);
     }
 }
