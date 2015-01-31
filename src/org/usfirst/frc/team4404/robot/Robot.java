@@ -1,9 +1,10 @@
-package com.nutsandcolts.robot;
+package org.usfirst.frc.team4404.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import com.nutsandcolts.robot.subsystems.SubsystemDrive;
+import org.usfirst.frc.team4404.robot.subsystems.SubsystemDrive;
+import org.usfirst.frc.team4404.robot.subsystems.SubsystemLift;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -15,6 +16,7 @@ import com.nutsandcolts.robot.subsystems.SubsystemDrive;
 public class Robot extends IterativeRobot {
 
     public static final SubsystemDrive subsystemDrive = new SubsystemDrive();
+    public static final SubsystemLift subsystemLift = new SubsystemLift();
     public static OI oi;
 
     /**

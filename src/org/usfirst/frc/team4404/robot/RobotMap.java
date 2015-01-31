@@ -1,4 +1,4 @@
-package com.nutsandcolts.robot;
+package org.usfirst.frc.team4404.robot;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -23,4 +23,7 @@ public class RobotMap {
 
     public static int rightMotor1 = 2;
     public static int rightMotor2 = 3;
+
+    public static int liftMotor = 4;
+
 }

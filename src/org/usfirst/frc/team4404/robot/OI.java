@@ -1,6 +1,9 @@
-package com.nutsandcolts.robot;
+package org.usfirst.frc.team4404.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import org.usfirst.frc.team4404.robot.commands.CmdMoveLiftDown;
+import org.usfirst.frc.team4404.robot.commands.CmdMoveLiftUp;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -36,10 +39,23 @@ public class OI {
     // button.whenReleased(new CmdDriveForward());
 
     private static final int JOYSTICK_PORT = 1;
+
+    private static final int LIFT_UP = 3;
+    private static final int LIFT_DOWN = 2;
+
     private Joystick joystick;
+
+    private JoystickButton liftUp;
+    private JoystickButton liftDown;
 
     public OI() {
         joystick = new Joystick(JOYSTICK_PORT);
+
+        liftUp = new JoystickButton(joystick, LIFT_UP);
+        liftDown = new JoystickButton(joystick, LIFT_DOWN);
+
+        liftUp.whileHeld(new CmdMoveLiftUp());
+        liftDown.whileHeld(new CmdMoveLiftDown());
     }
 
     public Joystick getJoystick() {
