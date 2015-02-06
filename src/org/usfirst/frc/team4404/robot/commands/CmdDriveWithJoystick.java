@@ -13,7 +13,7 @@ public class CmdDriveWithJoystick extends Command {
     }
 
     protected void execute() {
-        Robot.subsystemDrive.driveWithJoystick(Robot.oi.getJoystick1());
+        Robot.subsystemDrive.driveWithJoystick(Robot.oi.getJoystick());
     }
 
     protected boolean isFinished() {
