@@ -1,17 +1,21 @@
-package com.nutsandcolts.robot.commands;
+package org.usfirst.frc.team4404.robot.commands;
 
-import com.nutsandcolts.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
+import org.usfirst.frc.team4404.robot.Robot;
 
-public class MoveLiftWithJoystick extends Command {
-    @Override
-    protected void initialize() {
+public class CmdMoveLiftUp extends Command {
+    public CmdMoveLiftUp() {
         requires(Robot.subsystemLift);
     }
 
     @Override
+    protected void initialize() {
+
+    }
+
+    @Override
     protected void execute() {
-        Robot.subsystemLift.set((float) Robot.oi.getJoystick2().getThrottle());
+        Robot.subsystemLift.moveLiftUp();
     }
 
     @Override

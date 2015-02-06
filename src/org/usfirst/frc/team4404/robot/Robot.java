@@ -1,10 +1,10 @@
-package com.nutsandcolts.robot;
+package org.usfirst.frc.team4404.robot;
 
-import com.nutsandcolts.robot.subsystems.SubsystemDrive;
-import com.nutsandcolts.robot.subsystems.SubsystemLift;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import org.usfirst.frc.team4404.robot.subsystems.SubsystemDrive;
+import org.usfirst.frc.team4404.robot.subsystems.SubsystemLift;
 
 /**
  * The VM is configured to automatically run this class, and to call the

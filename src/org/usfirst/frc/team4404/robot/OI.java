@@ -1,6 +1,9 @@
-package com.nutsandcolts.robot;
+package org.usfirst.frc.team4404.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import org.usfirst.frc.team4404.robot.commands.CmdMoveLiftDown;
+import org.usfirst.frc.team4404.robot.commands.CmdMoveLiftUp;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -9,8 +12,8 @@ import edu.wpi.first.wpilibj.Joystick;
 public class OI {
 
     //// CREATING BUTTONS
-    // One type of button is a joystick1 button which is any button on a joystick1.
-    // You create one by telling it which joystick1 it's on and which button
+    // One type of button is a joystick button which is any button on a joystick.
+    // You create one by telling it which joystick it's on and which button
     // number it is.
     // Joystick stick = new Joystick(port);
     // Button button = new JoystickButton(stick, buttonNumber);
@@ -35,22 +38,27 @@ public class OI {
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new CmdDriveForward());
 
-    private static final int JOYSTICK1_PORT = 1;
-    private Joystick joystick1;
+    private static final int JOYSTICK_PORT = 1;
 
-    private static final int JOYSTICK2_PORT = 2;
-    private Joystick joystick2;
+    private static final int LIFT_UP = 3;
+    private static final int LIFT_DOWN = 2;
+
+    private Joystick joystick;
+
+    private JoystickButton liftUp;
+    private JoystickButton liftDown;
 
     public OI() {
-        joystick1 = new Joystick(JOYSTICK1_PORT);
-        joystick2 = new Joystick(JOYSTICK2_PORT);
+        joystick = new Joystick(JOYSTICK_PORT);
+
+        liftUp = new JoystickButton(joystick, LIFT_UP);
+        liftDown = new JoystickButton(joystick, LIFT_DOWN);
+
+        liftUp.whileHeld(new CmdMoveLiftUp());
+        liftDown.whileHeld(new CmdMoveLiftDown());
     }
 
-    public Joystick getJoystick1() {
-        return joystick1;
-    }
-
-    public Joystick getJoystick2() {
-        return joystick2;
+    public Joystick getJoystick() {
+        return joystick;
     }
 }
