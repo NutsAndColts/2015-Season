@@ -38,10 +38,10 @@ public class OI {
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new CmdDriveForward());
 
-    private static final int JOYSTICK_PORT = 1;
+    private static final int JOYSTICK_PORT = 0;
 
-    private static final int LIFT_UP = 3;
-    private static final int LIFT_DOWN = 2;
+    private static final int LIFT_UP = 2;
+    private static final int LIFT_DOWN = 3;
 
     private Joystick joystick;
 
