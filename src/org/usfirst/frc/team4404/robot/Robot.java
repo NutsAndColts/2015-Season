@@ -3,6 +3,8 @@ package org.usfirst.frc.team4404.robot;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+
+import org.usfirst.frc.team4404.robot.subsystems.SubsystemArm;
 import org.usfirst.frc.team4404.robot.subsystems.SubsystemDrive;
 import org.usfirst.frc.team4404.robot.subsystems.SubsystemLift;
 
@@ -15,9 +17,11 @@ import org.usfirst.frc.team4404.robot.subsystems.SubsystemLift;
  */
 public class Robot extends IterativeRobot {
 
+	public static OI oi;
+	
     public static final SubsystemDrive subsystemDrive = new SubsystemDrive();
     public static final SubsystemLift subsystemLift = new SubsystemLift();
-    public static OI oi;
+    public static final SubsystemArm subsystemArm = new SubsystemArm();
 
     /**
      * This function is run when the robot is first started up and should be

@@ -4,6 +4,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc.team4404.robot.Robot;
 
 public class CmdMoveLiftDown extends Command {
+	
     public CmdMoveLiftDown() {
         requires(Robot.subsystemLift);
     }
