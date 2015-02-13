@@ -43,8 +43,8 @@ public class OI {
 
     private static final int JOYSTICK_PORT = 0;
 
-    private static final int LIFT_UP = 2;
-    private static final int LIFT_DOWN = 3;
+    private static final int LIFT_UP = 3;
+    private static final int LIFT_DOWN = 2;
     
     private static final int ROTATE_LEFT = 4;
     private static final int ROTATE_RIGHT = 5;
