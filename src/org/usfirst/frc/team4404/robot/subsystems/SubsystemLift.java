@@ -23,7 +23,7 @@ public class SubsystemLift extends Subsystem {
     }
 
     public void moveLiftDown() {
-        lift.set(-1);
+    	lift.set(-1);
     }
 
     public void stopLift() {

@@ -1,10 +1,10 @@
 package org.usfirst.frc.team4404.robot;
 
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
-import org.usfirst.frc.team4404.robot.subsystems.SubsystemArm;
 import org.usfirst.frc.team4404.robot.subsystems.SubsystemDrive;
 import org.usfirst.frc.team4404.robot.subsystems.SubsystemLift;
 
@@ -21,14 +21,15 @@ public class Robot extends IterativeRobot {
 	
     public static final SubsystemDrive subsystemDrive = new SubsystemDrive();
     public static final SubsystemLift subsystemLift = new SubsystemLift();
-    public static final SubsystemArm subsystemArm = new SubsystemArm();
-
+    
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
     public void robotInit() {
         oi = new OI();
+        CameraServer.getInstance().setQuality(50);
+        CameraServer.getInstance().startAutomaticCapture("cam0");
     }
 
     public void disabledPeriodic() {
