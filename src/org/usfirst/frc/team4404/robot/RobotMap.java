@@ -25,6 +25,6 @@ public class RobotMap {
     public static int rightMotor2 = 3;
 
     public static int liftMotor = 4;
-    
+  
     public static int limitLiftDown = 5;
 }
