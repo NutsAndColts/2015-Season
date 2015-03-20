@@ -16,17 +16,21 @@ public class CmdMoveLiftUp extends Command {
 
     @Override
     protected void execute() {
+    	/*if (Robot.oi.hasLimitReachedUp()) {
+			return;
+		}*/
+    	
         Robot.subsystemLift.moveLiftUp();
     }
 
     @Override
     protected boolean isFinished() {
-        return false;
+    	return false;
     }
 
     @Override
     protected void end() {
-
+    	
     }
 
     @Override

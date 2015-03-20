@@ -7,6 +7,7 @@ public class CmdMoveLiftDown extends Command {
 	
     public CmdMoveLiftDown() {
         requires(Robot.subsystemLift);
+        requires(Robot.subsystemLimiter);
     }
 
     @Override
@@ -16,17 +17,21 @@ public class CmdMoveLiftDown extends Command {
 
     @Override
     protected void execute() {
+    	/*if (Robot.oi.hasLimitReachedDown()) {
+    		return;
+    	}*/
+    	
         Robot.subsystemLift.moveLiftDown();
     }
 
     @Override
     protected boolean isFinished() {
-        return false;
+    	return Robot.subsystemLimiter.hasReachedLimitDown();
     }
 
     @Override
     protected void end() {
-
+    	Robot.subsystemLift.stopLift();
     }
 
     @Override

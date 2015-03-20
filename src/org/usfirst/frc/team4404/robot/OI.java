@@ -2,11 +2,8 @@ package org.usfirst.frc.team4404.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-
 import org.usfirst.frc.team4404.robot.commands.CmdMoveLiftDown;
 import org.usfirst.frc.team4404.robot.commands.CmdMoveLiftUp;
-import org.usfirst.frc.team4404.robot.commands.CmdRotateArmLeft;
-import org.usfirst.frc.team4404.robot.commands.CmdRotateArmRight;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -46,33 +43,32 @@ public class OI {
     private static final int LIFT_UP = 3;
     private static final int LIFT_DOWN = 2;
     
-    private static final int ROTATE_LEFT = 4;
-    private static final int ROTATE_RIGHT = 5;
-
+    private static final int SENSITIVE = 1;
+    
     private Joystick joystick;
 
     private JoystickButton liftUp;
     private JoystickButton liftDown;
-    private JoystickButton rotateLeft;
-    private JoystickButton rotateRight;
+    
+    private JoystickButton sensitiveControls;
 
     public OI() {
         joystick = new Joystick(JOYSTICK_PORT);
 
         liftUp = new JoystickButton(joystick, LIFT_UP);
         liftDown = new JoystickButton(joystick, LIFT_DOWN);
-
-        rotateLeft = new JoystickButton(joystick, ROTATE_LEFT);
-        rotateRight = new JoystickButton(joystick, ROTATE_RIGHT);
+        
+        sensitiveControls = new JoystickButton(joystick, SENSITIVE);
         
         liftUp.whileHeld(new CmdMoveLiftUp());
         liftDown.whileHeld(new CmdMoveLiftDown());
-        
-        rotateLeft.whileHeld(new CmdRotateArmLeft());
-        rotateRight.whileHeld(new CmdRotateArmRight());
     }
 
     public Joystick getJoystick() {
         return joystick;
+    }
+    
+    public boolean getSensitiveEnabled() {
+    	return sensitiveControls.get();
     }
 }
