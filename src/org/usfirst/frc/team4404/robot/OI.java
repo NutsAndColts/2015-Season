@@ -37,13 +37,15 @@ public class OI {
     // Start the command when the button is released  and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new CmdDriveForward());
+	
+	private static final boolean controller = false;
 
     private static final int JOYSTICK_PORT = 0;
 
-    private static final int LIFT_UP = 3;
-    private static final int LIFT_DOWN = 2;
+    private static final int LIFT_UP = (controller) ? 6 : 3;
+    private static final int LIFT_DOWN = (controller) ? 8 : 2;
     
-    private static final int SENSITIVE = 1;
+    private static final int SENSITIVE = (controller) ? 7 : 1;
     
     private Joystick joystick;
 

@@ -24,7 +24,7 @@ public class SubsystemDrive extends Subsystem {
 
 
     public void driveWithJoystick(Joystick stick) {
-    	double change = (Robot.oi.getSensitiveEnabled()) ? -2.5 : -1;
+    	double change = (Robot.oi.getSensitiveEnabled()) ? -2.5 : -1.3;
     	double stickX = stick.getX();
     	double stickY = stick.getY();
     	double driveX = (Math.abs(stickX) < 0.01) ? 0 : (stickX / change) - 0.08;
@@ -37,11 +37,11 @@ public class SubsystemDrive extends Subsystem {
         drive.arcadeDrive(driveY, driveX);
     }
     
-    public void driveForward() {
-    	drive.arcadeDrive(0.5, 0);
+    public void driveForward(double speed) {
+    	drive.arcadeDrive(speed, 0);
     }
     
     public void driveRight() {
-    	drive.arcadeDrive(0, -0.5);
+    	drive.arcadeDrive(0, -0.55);
     }
 }

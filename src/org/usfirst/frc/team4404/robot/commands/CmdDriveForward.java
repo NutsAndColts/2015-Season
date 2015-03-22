@@ -6,8 +6,16 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class CmdDriveForward extends Command {
 	
+	double driveSpeed;
+	
 	public CmdDriveForward() {
 		requires(Robot.subsystemDrive);
+		driveSpeed = 0.6;
+	}
+	
+	public CmdDriveForward(double speed) {
+		requires(Robot.subsystemDrive);
+		driveSpeed = speed;
 	}
 
 	@Override
@@ -18,7 +26,7 @@ public class CmdDriveForward extends Command {
 
 	@Override
 	protected void execute() {
-		Robot.subsystemDrive.driveForward();
+		Robot.subsystemDrive.driveForward(driveSpeed);
 	}
 
 	@Override
